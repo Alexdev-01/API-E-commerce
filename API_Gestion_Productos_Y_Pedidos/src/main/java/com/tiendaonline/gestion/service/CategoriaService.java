@@ -8,6 +8,12 @@ public interface CategoriaService {
 	
 	Categoria crearCategoria(Categoria categoria);
 	
+	Categoria obtenerCategoriaId(Long id);
+	
     List<Categoria> listarTodas();
+    
+    Categoria actualizarCategoria(Long id, Categoria categoria);
+    
+    void eliminarCategoria(Long id);
 
 }
