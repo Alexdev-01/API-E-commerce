@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 
 
 @Service	// Marca esta clase como un componente de servicio en Spring
-public class ProductoServiceImpl  implements ProductoService{
+// Implementa la interfaz ProductoService para proporcionar la lógica de negocio relacionada con los productos
+public class ProductoServiceImpl implements ProductoService{
 
 	private final ProductoRepository productoRepository;
 
