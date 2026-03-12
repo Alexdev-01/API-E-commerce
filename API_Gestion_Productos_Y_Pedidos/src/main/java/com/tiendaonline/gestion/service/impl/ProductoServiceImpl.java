@@ -1,5 +1,7 @@
 package com.tiendaonline.gestion.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.tiendaonline.gestion.model.Producto;
@@ -9,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service	// Marca esta clase como un componente de servicio en Spring
-public class ProductoServiceImpl {
+public class ProductoServiceImpl  implements ProductoService{
 
 	private final ProductoRepository productoRepository;
 
@@ -38,7 +40,7 @@ public class ProductoServiceImpl {
 	@Override
 	public void eliminarProducto(Long id) {
 		Producto producto = obtenerPorId(id);
-		producto.setActivo(false); // Soft delete
+		producto.setActivo(false); 
 		productoRepository.save(producto);
 	}
 
