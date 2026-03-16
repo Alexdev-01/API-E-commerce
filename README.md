@@ -25,9 +25,9 @@ Este proyecto simula el backend de un **e-commerce real**, aplicando buenas prá
 # 📌 ¿Para Qué Sirve Esta API?
 
 Esta API permite gestionar el backend de una tienda online con funcionalidades como:
-```
-✔ Registro y autenticación de usuarios
-✔ Seguridad mediante **JWT**
+
+* ✔ Registro y autenticación de usuarios
+* ✔ Seguridad mediante **JWT**
 ✔ Roles de usuario (**ADMIN / CLIENTE**)
 ✔ Gestión de **categorías de productos**
 ✔ Gestión de **productos y stock**
@@ -35,7 +35,7 @@ Esta API permite gestionar el backend de una tienda online con funcionalidades c
 ✔ Cálculo automático del total del pedido
 ✔ Reducción automática del stock al realizar compras
 ✔ Manejo de transacciones para evitar inconsistencias en la base de datos
-```
+
 
 El sistema está diseñado para simular el flujo real de compra de un e-commerce.
 
