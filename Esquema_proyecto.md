@@ -1,5 +1,5 @@
 ```text
-📦 Estructura del Proyecto
+📦 com.tiendaonline.gestion
 │
 ├── 📁 controller  → Controladores REST
 │   ├── AuthController
