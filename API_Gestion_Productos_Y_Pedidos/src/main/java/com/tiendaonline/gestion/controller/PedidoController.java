@@ -1,7 +1,5 @@
 package com.tiendaonline.gestion.controller;
 
-import java.net.Authenticator;
-
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,11 +23,11 @@ public class PedidoController {
 	}
 	
 	@PostMapping	// Define un endpoint POST para crear un nuevo pedido
-	public Pedido crearPedido(@RequestBody CrearPedidoRequest pedidoService, Authentication authentication) {
+	public Pedido crearPedido(@RequestBody CrearPedidoRequest request, Authentication authentication) {
 		
 		String username = authentication.getName(); 
 		
-		return pedidoService.crearPedido(request, username);
+		return this.pedidoService.crearPedido(request, username);
 	}
 
 }
