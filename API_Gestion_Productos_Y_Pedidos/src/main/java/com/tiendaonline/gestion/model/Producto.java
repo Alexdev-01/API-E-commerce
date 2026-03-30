@@ -1,5 +1,6 @@
 package com.tiendaonline.gestion.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -11,9 +12,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity	// Indica que esta clase es una entidad JPA y se mapeará a una tabla en la BBDD
-@Table(name = "pedidos")	// Especifica el nombre de la tabla en la BBDD a la que se mapeará esta entidad
+@Table(name = "productos")	// Especifica el nombre de la tabla en la BBDD a la que se mapeará esta entidad
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Producto {
 	
 	@Id	// Indica que este campo es la clave primaria de la entidad
@@ -26,7 +33,7 @@ public class Producto {
 	private String descripcion;
 	
 	@Column(nullable = false)	// Especifica que esta columna no puede ser nula en la BBDD
-	private Double precio;
+	private BigDecimal precio;
 	
 	@Column(nullable = false)	// Especifica que esta columna no puede ser nula en la BBDD
 	private Integer stock;
