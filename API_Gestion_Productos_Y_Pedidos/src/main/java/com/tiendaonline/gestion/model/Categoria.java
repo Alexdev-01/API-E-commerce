@@ -9,9 +9,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity	// Indica que esta clase es una entidad JPA y se mapeará a una tabla en la BBDD
 @Table(name = "categorias")	// Especifica el nombre de la tabla en la BBDD a la que se mapeará esta entidad
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Categoria {
 
 	@Id 	// Indica que este campo es la clave primaria de la entidad
