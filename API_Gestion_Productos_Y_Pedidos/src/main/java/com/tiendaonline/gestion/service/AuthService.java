@@ -1,5 +1,3 @@
-package com.tiendaonline.gestion.service.impl;
-
 package com.tiendaonline.gestion.service;
 
 import com.tiendaonline.gestion.dto.auth.AuthResponse;
