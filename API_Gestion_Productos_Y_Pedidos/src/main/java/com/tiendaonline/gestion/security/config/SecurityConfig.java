@@ -6,6 +6,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,15 +28,16 @@ public class SecurityConfig {
 	@Bean	// Marca este método como un bean de Spring, lo que permite su gestión y uso en otras partes de la aplicación
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		
-		http.csrf().disable().authorizeHttpRequests(auth -> auth
+		http
+			.csrf(AbstractHttpConfigurer::disable)
+			.authorizeHttpRequests(auth -> auth
 				.requestMatchers("/auth/**").permitAll()
 				.requestMatchers("/productos/**").permitAll()
 				.requestMatchers("/categoria/**").hasRole("ADMIN")
 				.anyRequest().authenticated()
-				)
-				.sessionManagement (session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-				)
-				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+			)
+			.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+			.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 		
 		return http.build();
 	}
