@@ -1,5 +1,6 @@
-# 🛒 API Gestión de Productos y Pedidos
+# 🛒 API E-commerce
 
+API Gestion Productos y Pedidos.
 Backend REST desarrollado con **Spring Boot** para la gestión de una tienda online.
 Permite administrar **usuarios, productos, categorías y pedidos**, incluyendo control de **stock**, **seguridad con JWT** y **roles de usuario**.
 
