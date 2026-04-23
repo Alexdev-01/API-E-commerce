@@ -207,7 +207,7 @@ http://localhost:8080
 
 # 🧪 Probar la API con Postman
 
-### Registrar usuario
+Registrar usuario
 
 ```
 POST /auth/register
